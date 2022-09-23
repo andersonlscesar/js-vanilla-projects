@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Dirtyboy';
+    src: url('../font/dirtyboy/Dirtyboy-BxYl.ttf');
+}
+
+@font-face {
+    font-family: 'Cramp';
+    src: url('../font/camp/CrampsRegular-OV7od.ttf');
+}
+
+:root {
+    --primary-color: #0d1b2a;
+}
+
+body {
+    font-family: 'Dirtyboy';
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+
+}
+
+.main-text {
+    font-size: 5rem;
+}
+
+.description {
+    font-family: 'Cramp';
+}
+
+.main-text, .description  {
+    text-align: center;
+}
+
+.information__image {
+    width: calc(30rem + 5vw);
+    border-radius: 15px;
+    transition: all .3s ease;
+    object-fit: cover;
+
+}
+
+.information__image:hover {
+    filter: grayscale(100%);
+    transition: all .3s ease;
+}
+
+.details__para, .details__title {
+    font-family: 'Cramp';
+}
+
+.heroes {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heroes__information {
+    display: flex;
+    gap: 1rem;
+    background-color: #465C73;
+    padding: 1rem;
+    border-radius: 15px;
+    
+}
+
+.details__button {
+    padding: .8rem 2.5rem;
+    border-radius: 5px;
+    border: transparent;
+    font-family: 'Cramp';
+    background-color: #4595eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+.information__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.information__details .details__button {
+    align-self: flex-start;
+}
