@@ -60,9 +60,7 @@
         })
 
         loadingStage('none')
-    }
-
-    
+    }    
     
     createListeners(buttonSeeMore, userEvents, selectAllInformation)
 })()
