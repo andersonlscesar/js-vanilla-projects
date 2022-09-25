@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1C1A1A;
+    --secondary-color: #2E2E2E;
+    --button-color: #F64747;
+    --text-color: #8393AA;
+    --text-color-button: #5a1616;
+}
+
+@font-face {
+    font-family: Space;
+    src: url('../fonts/Spac3Tech-Dg7E.ttf');
+}
+
+body {
+    font-family: Space;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    letter-spacing: 4px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.main-text {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.button-container {
+    text-align: center;
+    padding: 1rem;
+}
+
+.load-users {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: transparent;
+    border-radius: 10px;
+    background-color: var(--button-color);
+    color: var(--text-color-button);
+    font-family: Space;
+    transition: box-shadow .2s ease-in-out;
+
+}
+
+.load-users:hover {
+    box-shadow: 1px 1px 30px var(--button-color);
+    transition: box-shadow .2s ease-in-out;
+}
+
+.list {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.list .list__information {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.list .list__information .information__name {
+    margin-bottom: .5rem;
+}
+
+.loading {
+    background-color: var(--primary-color);
+    height: 100px;
+    width: 100px;
+    display: none;
+    margin: 3rem auto;
+    border-radius: 50%;
+    border-top: 4px solid var(--button-color);
+    animation: loading .4s alternate infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(1turn);
+    }
+}
