@@ -80,22 +80,22 @@
 
     function openModal() {
         modalContainer.classList.add('container-modal--active')
-        modalContainer.addEventListener('transitionend', () => {
-            
+        modalContainer.addEventListener('transitionend', () => {            
             modal.classList.add('modal--active')
         })
     }
 
     buttonModal.addEventListener('click', closeModal)
 
-    function closeModal() {
+    function closeModal() {  
         modal.classList.add('modal--hide')   
         
-        modal.addEventListener('animationend', () => {            
+        modal.addEventListener('animationend', () => {           
+            console.log(true) 
             modal.classList.remove('modal--hide')            
             modal.classList.remove('modal--active')            
             modalContainer.classList.remove('container-modal--active')
-        })
+        }, {once: true})
     }
 
 
