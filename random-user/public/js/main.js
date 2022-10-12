@@ -11,7 +11,6 @@
 
     const userList = document.querySelector('.user')
     const form = document.querySelector('.form')
-    const buttonModal = document.querySelector('.modal__button')
 
     form.addEventListener('submit', search)
 
@@ -59,7 +58,7 @@
         userEvents.forEach(user => {
             div.addEventListener(user, (e) => {
                 if (e.cancelable) e.preventDefault()
-                openModal()
+                openModal(div.innerHTML)
             })
         })
 
@@ -77,15 +76,21 @@
 
     const modalContainer = document.querySelector('.container-modal')
     const modal = document.querySelector('.modal')
+    const buttonCloseModal = document.createElement('button')
+    buttonCloseModal.classList.add('modal__button')
+    buttonCloseModal.innerText = 'Close'
 
-    function openModal() {
+    function openModal(userInfo) {
         modalContainer.classList.add('container-modal--active')
+        modal.innerHTML = userInfo
+        modal.appendChild( buttonCloseModal )
         modalContainer.addEventListener('transitionend', () => {            
             modal.classList.add('modal--active')
         })
+
     }
 
-    buttonModal.addEventListener('click', closeModal)
+    buttonCloseModal.addEventListener('click', closeModal)
 
     function closeModal() {  
         modal.classList.add('modal--hide')   

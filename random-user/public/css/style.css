@@ -144,6 +144,7 @@ img {
     padding: .8rem 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+    flex-basis: 100%;
 }
 
 @keyframes modal {
