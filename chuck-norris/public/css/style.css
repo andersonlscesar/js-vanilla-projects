@@ -63,6 +63,23 @@
   border-radius: 50%;
 }
 
+.star {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 100px;
+  left: 100px;
+  box-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff;
+  animation: star 1s alternate infinite;
+}
+
+@keyframes star {
+  to {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+}
 * {
   padding: 0;
   margin: 0;

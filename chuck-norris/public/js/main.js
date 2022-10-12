@@ -1,6 +1,5 @@
-window.addEventListener('load', () => {
-    const chuck = document.querySelector('.chuck')
-    setTimeout(() => {
-        chuck.classList.add('chuck--hide')
-    }, 5000)
-})
+import chuck from "./module/chuck.js"
+import stars from "./module/stars.js"
+
+// chuck()
+stars()
