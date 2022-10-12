@@ -1,0 +1,68 @@
+@use '../variables' as var;
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 1rem;
+}
+
+#body {
+    background-image: linear-gradient(to bottom, var.$primary-color 40%, var.$secondary-color 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form {
+    flex-basis: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .form__input {
+        background-color: var.$input-color;
+        border: transparent;
+        padding: 1rem;
+        flex: 1;
+        outline: none;
+        &::placeholder {
+            color: #fff;
+        }
+    }
+
+    .form__button {
+        background-color: var.$button-color;
+        border: transparent;
+        padding: 1rem;
+        color: #fff;
+        cursor: pointer;
+        margin-left: auto;
+    }
+}
+
+.chuck {
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: linear-gradient(to bottom, var.$primary-color 40%, var.$secondary-color 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all  .2s ease-in-out;
+}
+
+.chuck--hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
