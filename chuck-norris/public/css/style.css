@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: center;
   gap: 1rem;
 }
 
@@ -14,6 +14,7 @@
   background-image: linear-gradient(to bottom, rgb(52, 54, 99) 40%, #555394 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .form {
@@ -21,6 +22,8 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
 }
 .form .form__input {
   background-color: #616394;
@@ -28,6 +31,8 @@
   padding: 1rem;
   flex: 1;
   outline: none;
+  font-family: pixel;
+  color: #fff;
 }
 .form .form__input::placeholder {
   color: #fff;
@@ -39,6 +44,10 @@
   color: #fff;
   cursor: pointer;
   margin-left: auto;
+  font-family: pixel;
+}
+.form .form__button:active {
+  transform: scale(0.9);
 }
 
 .chuck {
@@ -73,12 +82,32 @@
   left: 100px;
   box-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff;
   animation: star 1s alternate infinite;
+  opacity: 0.4;
+  will-change: transform;
 }
 
 @keyframes star {
   to {
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
   }
+}
+/*
+======================
+JOKE
+======================
+*/
+.joke {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  color: #f5f5f5;
+}
+
+@font-face {
+  font-family: pixel;
+  src: url("../fonts/pixel-emulator-font/PixelEmulator-xq08.ttf");
 }
 * {
   padding: 0;
@@ -88,6 +117,7 @@
 
 html, body {
   height: 100%;
+  font-family: pixel;
 }
 
 /*# sourceMappingURL=style.css.map */

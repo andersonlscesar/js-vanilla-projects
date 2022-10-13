@@ -1,6 +1,11 @@
 @use './variables' as var;
 @use './components' as comp;
 
+@font-face {
+    font-family: pixel;
+    src: url('../fonts/pixel-emulator-font/PixelEmulator-xq08.ttf');
+}
+
 
 * {
     padding: 0;
@@ -10,4 +15,5 @@
 
 html,body {
     height: 100%;
+    font-family: pixel;
 }
