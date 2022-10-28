@@ -46,10 +46,16 @@ export default function jokeAPI() {
     }
 
     async function searchForAJoke(url, value) {
+        jokeField.innerHTML = ''
         let currentURL = url + value 
         const response = await fetch(currentURL, config).then(response => response.json())
+        const results = response['result']
+        results.forEach((result) => {
+            let values = createHTMLElement(result.value)
+            jokeField.appendChild( values )
+        }) 
         
-        console.log(response)
+
     }
 
 
@@ -59,7 +65,5 @@ export default function jokeAPI() {
         para.innerHTML = value
         return para
     }
-
-    // async function getJoke()
 
 }

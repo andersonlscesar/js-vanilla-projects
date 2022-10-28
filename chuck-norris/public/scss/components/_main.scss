@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: flex-start;
     gap: 1rem;
 }
 
@@ -16,7 +16,7 @@
     background-image: linear-gradient(to bottom, var.$primary-color 40%, var.$secondary-color 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
+    
 }
 
 .form {
@@ -73,35 +73,6 @@
     transition: all  .2s ease-in-out;
 }
 
-.chuck--hide {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-}
-
-.star {
-    position: absolute;
-    height: 8px;
-    width: 8px;
-    background-color: #fff;
-    border-radius: 50%;
-    top: 100px ;
-    left: 100px;
-    box-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff;
-    animation: star 1s alternate infinite;
-    opacity: .4;
-    will-change: transform;
-}
-
-@keyframes star {
-
-    to {
-        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-    }
-    
-}
-
-
 /*
 ======================
 JOKE
@@ -109,10 +80,14 @@ JOKE
 */
 
 .joke {
-    background-color: rgba(255,255,255, .1);
-    padding: 1rem;
     position: relative;
     z-index: 10;
     backdrop-filter: blur(10px);
     color: #f5f5f5;
+
+    .joke__para {
+        background-color: rgba(255,255,255, .1);
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
 }
