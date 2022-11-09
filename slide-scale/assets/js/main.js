@@ -14,15 +14,13 @@ class SlideScale {
         this.counter++;
         if (this.counter === this.images.length)
             this.counter = this.images.length - 1;
-        let imgs = Array.from(this.images);
-        imgs[this.counter].classList.add('active');
-        imgs[this.counter].classList.remove('hide');
+        this.images[this.counter].classList.add('active');
+        this.images[this.counter].classList.remove('hide');
     }
     previous() {
-        let imgs = Array.from(this.images);
         if (this.counter > 0) {
-            imgs[this.counter].classList.add('hide');
-            imgs[this.counter].classList.remove('active');
+            this.images[this.counter].classList.add('hide');
+            this.images[this.counter].classList.remove('active');
             this.counter--;
         }
     }
@@ -35,7 +33,7 @@ class SlideScale {
         });
     }
 }
-const images = document.querySelectorAll('.slide__img');
+const images = document.getElementsByClassName('slide__img');
 const rightButton = document.querySelector('.controls__right');
 const leftButton = document.querySelector('.controls__left');
 const slideScale = new SlideScale(images, rightButton, leftButton);

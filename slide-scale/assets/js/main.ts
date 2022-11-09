@@ -1,13 +1,13 @@
-type button = HTMLElement 
+type button = HTMLImageElement 
 type NodeCollection = NodeList | HTMLCollection
 
 class SlideScale {
-    private images: NodeCollection
+    private images: HTMLCollection
     private rightButton: button
     private leftButton: button
     private counter: number = 0
 
-    constructor(images: NodeCollection, rightButton: button, leftButton: button ) {
+    constructor(images: HTMLCollection, rightButton: button, leftButton: button ) {
         this.images         = images
         this.rightButton    = rightButton
         this.leftButton     = leftButton
@@ -17,16 +17,14 @@ class SlideScale {
     private next() {
         this.counter++
         if(this.counter === this.images.length) this.counter = this.images.length - 1
-        let imgs = Array.from(this.images)
-        imgs[this.counter].classList.add('active')       
-        imgs[this.counter].classList.remove('hide')       
+        this.images[this.counter].classList.add('active')       
+        this.images[this.counter].classList.remove('hide')       
     }
 
     private previous() {
-        let imgs = Array.from(this.images)
         if(this.counter > 0) {
-            imgs[this.counter].classList.add('hide') 
-            imgs[this.counter].classList.remove('active') 
+            this.images[this.counter].classList.add('hide') 
+            this.images[this.counter].classList.remove('active') 
             this.counter--
         }
     }
@@ -43,7 +41,7 @@ class SlideScale {
 }
 
 
-const images = document.querySelectorAll('.slide__img')! as NodeCollection
+const images = document.getElementsByClassName('slide__img')! as HTMLCollection
 const rightButton = document.querySelector('.controls__right')! as button
 const leftButton = document.querySelector('.controls__left')! as button
 const slideScale = new SlideScale(images, rightButton, leftButton)
